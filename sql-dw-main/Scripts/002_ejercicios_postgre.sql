@@ -1,26 +1,38 @@
 
 -- Recupera todos los clientes (name y email) ordenados alfabéticamente por nombre.
 
+SELECT name, email
+FROM customer ORDER BY name ASC;
 
 
 -- Encuentra el número total de reservas.
-
+SELECT COUNT(reservation_id) FROM reservation;
 
 
 -- Muestra los detalles de las reservas (reservation_id, start_date, end_date) para un cliente específico (puedes elegir el customer_id).
-
+SELECT reservation_id, start_date, end_date
+FROM reservation 
+WHERE customer_id = 7;
 
 
 -- Encuentra el nombre y apellido de los propietarios que tienen apartamentos.
-
+SELECT name, surname 
+FROM owner ow
+INNER JOIN apartment ap ON ow.owner_id = ap.owner_id;
 
 
 -- Recupera el nombre y la ubicación de los apartamentos propiedad de un propietario específico (puedes elegir el owner_id).
-
+SELECT ow.name, ow.surname, ap.location
+FROM owner ow
+INNER JOIN apartment ap ON ow.owner_id = ap.owner_id
+WHERE ow.owner_id = 3;
 
 
 -- Muestra las comodidades asociadas a un apartamento específico (puedes elegir el apartment_id).
-
+SELECT *
+FROM amenity am
+INNER JOIN apt_amenity apt ON am.amenity_id = apt.amenity_id
+WHERE apt.apartment_id = 14;
 
 
 -- Encuentra los clientes que no han realizado ninguna reserva.
