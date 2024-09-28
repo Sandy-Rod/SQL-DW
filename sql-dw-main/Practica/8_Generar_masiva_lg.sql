@@ -5,7 +5,8 @@ SELECT ivr_d.calls_ivr_id
          THEN 1
          ELSE 0 
        END AS masiva_lg
-FROM keepcoding.ivr_detail ivr_d;
+    FROM 
+        keepcoding.ivr_detail ivr_d;
 
 
 

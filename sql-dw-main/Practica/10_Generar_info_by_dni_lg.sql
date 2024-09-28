@@ -7,4 +7,5 @@ SELECT ivr_d.calls_ivr_id
           THEN 1
           ELSE 0
         END AS info_by_dni_lg
-FROM `keepcoding.ivr_detail` ivr_d;
+     FROM 
+          keepcoding.ivr_detail ivr_d;

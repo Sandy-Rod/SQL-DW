@@ -11,7 +11,7 @@ CREATE OR REPLACE FUNCTION Z99_FUNCTIONS.fnc_cleaning_string(p_string STRING) RE
               ELSE IFNULL(UPPER(TRIM(Z99_FUNCTIONS.fnc_chk_length_string(p_string))),'UNKNOWN')
             END ))
 
-CREATE OR REPLACE FUNCTION Z99_FUNCTIONS.fnc_customer_weight(p_string STRING) RETURNS INT64 AS
+CREATE OR REPLACE FUNCTION Z99_FUNCTIONS.fnc_customer_weight(state STRING) RETURNS INT64 AS
 ((SELECT CASE WHEN state='NEW' THEN 1
                   WHEN state='PENDINGACTIVE' THEN 2
                   WHEN state='ACTIVE' THEN 3
